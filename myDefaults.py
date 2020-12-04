@@ -1,1 +1,1 @@
-folders={"~/github/localWebsites"}
+folders={"~/github/localWebsites", "~/github/website-hub", "~/github/git-auto-pull", "~/github/computer-lifecycle-scripts"}

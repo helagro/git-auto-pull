@@ -48,7 +48,6 @@ def pullAllInArr(folders):
 
 def processFolder(folder):
     folder = os.path.expanduser(folder)
-
     return folder
 
 
