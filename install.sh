@@ -6,5 +6,6 @@ fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-(crontab -l 2>/dev/null; echo "@reboot cd "$DIR" && nohup python3 main.py&") | crontab -
+(crontab -l 2>/dev/null; echo "@reboot cd "$DIR" && nohup python3 main.py &") | crontab -
+(crontab -l 2>/dev/null; echo "@daily cd "$DIR" && nohup python3 main.py &") | crontab -
 touch THE_SCRIPT_IS_INSTALLED
