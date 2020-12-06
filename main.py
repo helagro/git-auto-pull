@@ -44,6 +44,7 @@ def pullAllInArr(folders):
             return
 
         pull(processedFolder)
+        pullSubmodules(processedFolder)
 
 
 def processFolder(folder):
@@ -62,8 +63,24 @@ def pull(repoPath):
         "-C",
         repoPath,
         "pull",
-        "--recurse-submodules"
     ]
+    subprocess.run(command)
+
+def pullSubmodules(repoPath):
+    command = [
+        "git",
+        "-C",
+        repoPath,
+        "submodule",
+        "foreach",
+        "git",
+        "pull",
+        "origin",
+        "main"
+    ]
+    runCommand(command)
+
+def runCommand(command):
     print("==============={}===============".format(command))
     subprocess.run(command)
 
