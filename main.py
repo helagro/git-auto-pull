@@ -37,11 +37,11 @@ def pullAllInArr(folders):
 
         if not os.path.isdir(processedFolder):
             print("{} is not a folder".format(processedFolder))
-            return
+            continue
         if not isGitRepo(processedFolder):
             subFolders = glob("{}*/".format(processedFolder))
             pullAllInArr(subFolders)
-            return
+            continue
 
         pull(processedFolder)
         pullSubmodules(processedFolder)
